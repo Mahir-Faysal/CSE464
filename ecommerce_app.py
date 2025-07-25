@@ -10,9 +10,9 @@ st.set_page_config(layout="wide", page_title="E-Commerce Provenance Viewer")
 st.title("🛒 E-Commerce Provenance Tracking System")
 
 # --- Oracle Database Connection ---
-DB_USER = "system"  # Replace with your Oracle DB username
-DB_PASSWORD = "mahir"  # Replace with your Oracle DB password
-DB_DSN = "localhost:1521/XEPDB1"  # Replace with your Oracle DSN
+DB_USER = ""  # Replace with your Oracle DB username
+DB_PASSWORD = ""  # Replace with your Oracle DB password
+DB_DSN = ""  # Replace with your Oracle DSN
 
 @st.cache_resource
 def init_connection():
