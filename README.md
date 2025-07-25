@@ -1,6 +1,6 @@
 # 🛒 E-Commerce Provenance Tracking System
 
-# 📚 Course : **CSE464 (Advance Database Systems)
+## 📚 Course : CSE464 (Advance Database Systems)
 **Advance Database Systems**
 
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://python.org)
