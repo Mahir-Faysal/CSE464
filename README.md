@@ -11,15 +11,49 @@
 
 A comprehensive provenance tracking system for e-commerce applications built with **Streamlit** and **Oracle 21g XE**. This system provides complete audit trails, lineage tracking, and advanced provenance analysis using WHO/WHAT/WHEN/WHY/HOW/WHERE methodology.
 
-## 🎯 **Features**
+# 🎯 What Can Users Do With This System?
 
-- **📊 Real-time Data Visualization**: Current system data across all entities
-- **📜 Complete Audit Trail**: Track all changes with timestamps and user attribution
-- **🔍 Advanced Provenance Analysis**: WHY/HOW/WHERE provenance queries
-- **📈 Analytics Dashboard**: System insights and user activity patterns
-- **🔎 Individual Record Tracing**: Detailed history for specific records
-- **🛤️ Customer Journey Tracking**: End-to-end customer experience lineage
-- **🛡️ Security Features**: User attribution and role-based tracking
+## 🔍 For Business Users
+
+Business users can view live data for customers, products, orders, and payments, track inventory levels and product performance, monitor order processing from placement to delivery, and oversee payment transactions and financial flows. The system enables users to find out who made changes to their data, discover when business events occurred, understand why prices or orders were changed, and trace how orders progressed through different statuses. Additionally, users can analyze customer behavior and purchasing patterns, track product performance and sales trends, identify bottlenecks in order fulfillment, and monitor staff activity and system usage.
+
+
+
+## 🔧 For Technical Users
+
+Technical users benefit from features that ensure data integrity with complete audit trails, meet compliance requirements (such as SOX, GDPR, and PCI-DSS), log all database modifications automatically, track user accountability for every change, and detect unauthorized changes or security issues. The system also allows users to trace individual records through their lifecycle, map customer journeys from registration to purchase, analyze data lineage and information flow, and generate compliance reports for audits.
+
+## ⚡ Quick Actions
+
+| I Want To...                        | Use This Feature                |
+|--------------------------------------|---------------------------------|
+| See who changed a product price      | Individual Product Trace        |
+| Track a customer's complete history  | Customer Journey Lineage        |
+| Find all changes in the last week    | Audit Logs with Date Filter     |
+| Understand why an order was cancelled| WHY-Provenance Query            |
+| Monitor staff database activity      | WHERE-Provenance Analysis       |
+| Generate compliance reports          | Analytics Dashboard             |
+| Investigate suspicious transactions  | Advanced Search & Filtering     |
+
+## 💡 Real-World Use Cases
+
+- **E-commerce Manager:** "Why did our best-selling product's price change?"
+- **Compliance Officer:** "Show me all customer data modifications for the audit."
+- **Customer Service:** "What's the history of this customer's orders?"
+- **Business Analyst:** "Which products have the most price changes?"
+- **Security Admin:** "Who accessed payment data last month?"
+- **Store Owner:** "How long do orders stay in 'processing' status?"
+
+## 🎯 Key Benefits
+
+- **Automatic tracking** of all changes
+- **Interactive analytics** and visualizations
+- **Time travel** to view historical data
+- **Full accountability** for every user action
+- **Compliance-ready** audit trails
+- **Business performance insights**
+
+Perfect for e-commerce, retail, finance, healthcare, and any organization needing data
 
 ## 🏗️ **System Architecture**
 
@@ -162,56 +196,12 @@ End-to-end experience tracking:
 ### **Triggers**
 Automatic audit logging for all CRUD operations on business tables.
 
-## 📈 **Sample Queries**
 
-### **WHY-Provenance: Product Price Changes**
-```sql
-SELECT p.name, ap.old_price, ap.new_price, ap.reason, ap.changed_at
-FROM Audit_Products ap
-JOIN Products p ON ap.product_id = p.product_id
-WHERE ap.old_price != ap.new_price
-ORDER BY ap.changed_at DESC;
-```
-
-### **HOW-Provenance: Order Status Flow**
-```sql
-SELECT order_id, old_status, new_status, changed_at
-FROM Audit_Orders
-WHERE order_id = 1
-ORDER BY changed_at ASC;
-```
-
-### **WHERE-Provenance: User Activity**
-```sql
-SELECT u.username, al.table_name, COUNT(*) as changes
-FROM Audit_Log al
-JOIN Users u ON al.changed_by = u.user_id
-GROUP BY u.username, al.table_name;
-```
-
-## 🛡️ **Security Features**
-
-- **SQL Injection Prevention**: Parameterized queries
-- **User Attribution**: Complete audit trail with user tracking
-- **Role-Based Access**: User roles recorded with all actions
-- **Session Tracking**: Connection and session information logging
 
 ## 📋 **API Reference**
 
 ### **Core Functions**
 
-#### **Database Connection**
-```python
-@st.cache_resource
-def init_connection():
-    """Initializes cached Oracle database connection."""
-```
-
-#### **Query Execution**
-```python
-def run_query(query, params=None):
-    """Executes SQL query with optional parameters."""
-```
 
 #### **Provenance Analysis**
 ```python
@@ -225,37 +215,7 @@ def get_where_provenance():
     """Returns WHERE-provenance data for user actions."""
 ```
 
-## 🧪 **Testing**
 
-Run the test suite:
-```bash
-python -m pytest tests/
-```
-
-### **Test Coverage**
-- Database connectivity
-- Query execution
-- Data validation
-- UI component rendering
-
-## 🐛 **Troubleshooting**
-
-### **Common Issues**
-
-#### **Database Connection Failed**
-```
-Error: ORA-12541: TNS:no listener
-```
-**Solution**: Ensure Oracle database is running and listener is active.
-
-#### **Empty Query Results**
-**Cause**: Missing audit triggers or no data in date range.
-**Solution**: Verify triggers are enabled and data exists.
-
-#### **Performance Issues**
-**Solution**: Use date range filters and add database indexes.
-
-See [TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md) for detailed solutions.
 
 ## 📄 **License**
 
@@ -271,11 +231,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
 
-## 📞 **Support**
-
-- **Documentation**: [docs/](docs/)
-- **Issues**: [GitHub Issues](https://github.com/yourusername/ecommerce-provenance-system/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/yourusername/ecommerce-provenance-system/discussions)
 
 ## 🎖️ **Acknowledgments**
 
