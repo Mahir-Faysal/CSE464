@@ -15,13 +15,13 @@ A comprehensive provenance tracking system for e-commerce applications built wit
 
 ## 🔍 For Business Users
 
-Business users can view live data for customers, products, orders, and payments, track inventory levels and product performance, monitor order processing from placement to delivery, and oversee payment transactions and financial flows. The system enables users to find out who made changes to their data, discover when business events occurred, understand why prices or orders were changed, and trace how orders progressed through different statuses. Additionally, users can analyze customer behavior and purchasing patterns, track product performance and sales trends, identify bottlenecks in order fulfillment, and monitor staff activity and system usage.
+Business users can view live data for customers, products, orders, and payments, track inventory levels and product performance, monitor order processing from placement to delivery, and oversee payment transactions and financial flows.
 
 
 
 ## 🔧 For Technical Users
 
-Technical users benefit from features that ensure data integrity with complete audit trails, meet compliance requirements (such as SOX, GDPR, and PCI-DSS), log all database modifications automatically, track user accountability for every change, and detect unauthorized changes or security issues. The system also allows users to trace individual records through their lifecycle, map customer journeys from registration to purchase, analyze data lineage and information flow, and generate compliance reports for audits.
+Technical users benefit from features that ensure data integrity with complete audit trails, meet compliance requirements (such as SOX, GDPR, and PCI-DSS), log all database modifications automatically, track user accountability for every change, and detect unauthorized changes or security issues.
 
 ## ⚡ Quick Actions
 
